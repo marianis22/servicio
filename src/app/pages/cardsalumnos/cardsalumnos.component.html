@@ -1,71 +1,26 @@
-<div class="jumbotron jumbotron-fluid">
+
     <div class="container">
         
         <div class="row">
             
-            <div class="col-sm-3">
-              <div class="card">
+            <div class="card-deck">
+              <div class="card animated fadeIn fast" *ngFor="let student of students; let i = index">
+                <img class="card-img-top img-fluid"src="assets/imagenes/abeja.jpg" alt="Card image cap" >
+
                 <div class="card-body">
-                    <img src="assets/imagenes/abeja.jpg" alt="Fjords" style="width:50%">
-            
-                  <h5 class="card-title">Nombre Alumno</h5>
-                  <p class="font-weight-bold">Peso:</p>
-                  <p class="font-weight-bold">Estatura:</p>
+                  <h4 class="card-title">{{ student.first_name }} </h4>
+                  <h4 class="card-title">{{ student.last_name }} </h4>
+                  <p class="card-text">Edad: {{ student.age }}</p>
+                  <p class="card-text">Nua: {{ student.nua }}</p>
+                  
+                </div>
+                <div class="card-footer">
                   <button type="button" class="btn btn-success  btn btn-primary btn-block">Marcar Asistencia</button>
-                  <button type="button" class="btn btn-primary btn btn-primary btn-block">Detalles</button>
+                  <button (click) = "verStudent(i)" 
+                  type="button" class="btn btn-outline-primary btn-block">Detalles</button>
+
+                  <!-- <a [routerLink] = "['/student', i]" class="btn btn-outline-primary btn-block">Detalles</a> -->
                 </div>
               </div>
             </div>
-            <div class="col-sm-3">
-              <div class="card">
-                <div class="card-body">
-                    <img src="assets/imagenes/abeja.jpg" alt="Fjords" style="width:50%">
-                  <h5 class="card-title">Nombre Alumno</h5>
-                  <p class="font-weight-bold">Peso:</p>
-                  <p class="font-weight-bold">Estatura:</p>
-                  <button type="button" class="btn btn-success  btn btn-primary btn-block">Marcar Asistencia</button>
-                  <button type="button" class="btn btn-primary btn btn-primary btn-block">Detalles</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <img src="assets/imagenes/abeja.jpg" alt="Fjords" style="width:50%">
-                    <h5 class="card-title">Nombre Alumno</h5>
-                    <p class="font-weight-bold">Peso:</p>
-                    <p class="font-weight-bold">Estatura:</p>
-                    <button type="button" class="btn btn-success  btn btn-primary btn-block">Marcar Asistencia</button>
-                    <button type="button" class="btn btn-primary btn btn-primary btn-block">Detalles</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <img src="assets/imagenes/abeja.jpg" alt="Fjords" style="width:50%">
-                    <h5 class="card-title">Nombre alumno</h5>
-                    <p class="font-weight-bold">Peso:</p>
-                    <p class="font-weight-bold">Estatura:</p>
-                    <button type="button" class="btn btn-success  btn btn-primary btn-block">Marcar Asistencia</button>
-                    <button type="button" class="btn btn-primary btn btn-primary btn-block">Detalles</button>
-                  </div>
-                </div>
-              </div>
-        <!-- siguente fila-->
-              <div class="col-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <img src="assets/imagenes/abeja.jpg" alt="Fjords" style="width:50%" >
-                    <h5 class="card-title">Nombre Alumno</h5>
-                   
-                    <p class="font-weight-bold">Peso:</p>
-                    <p class="font-weight-bold">Estatura:</p>
-                    <p></p>
-                    <button type="button" class="btn btn-success  btn btn-primary btn-block">Marcar Asistencia</button>
-                    <button type="button" class="btn btn-primary btn btn-primary btn-block">Detalles</button>
-                  </div>
-                </div>
-              </div>    
-          </div>
-          
+ 

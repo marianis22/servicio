@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { JsonService, Student } from '../../json.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cardsalumnos',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsalumnosComponent implements OnInit {
 
-  constructor() { }
+  students: Student[] = [];
+
+  constructor( private StudentService: JsonService,
+               private router: Router
+    ) {
+    console.log('Constructor ');
+  }
 
   ngOnInit() {
+    this.students = this.StudentService.getStudents();
+    console.log(this.students);
+
+  }
+  verStudent( idx: number ) {
+    this.router.navigate( [ '/student', idx]);
   }
 
 }
